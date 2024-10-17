@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://AlexRaihn.github.io/tree_test/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
