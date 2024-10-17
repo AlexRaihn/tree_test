@@ -13,7 +13,6 @@ export default defineConfig({
       '/api': {
         target: 'https://www.klerk.ru',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, ''),
       },
     },
   },
