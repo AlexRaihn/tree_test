@@ -25,7 +25,7 @@
     </div>
     <div class="font-bold text-xl" v-if="loading">Загрузка данных!</div>
     <div
-      v-else
+      v-if="!isError && !loading"
       class="flex flex-col gap-4 p-4 border-[1px] border-black rounded-md"
     >
       <div
@@ -55,6 +55,7 @@ const useCategoriesStore = CategoriesStore()
 const manyCategory = ref(false)
 const loading = ref(false)
 const checkAll = ref(false)
+const isError = ref(false)
 
 const checkLength = computed(() => {
   const checkArray = useCategoriesStore.categories.filter(item => item.checked)
@@ -74,6 +75,7 @@ async function getCategories() {
     })
     .catch(error => {
       alert('Произошла ошибка!' + error)
+      isError.value = true
     })
     .finally(() => {
       loading.value = false
