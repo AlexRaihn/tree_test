@@ -8,14 +8,6 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   base: '/tree_test/',
   plugins: [vue(), vueDevTools()],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://www.klerk.ru',
-        changeOrigin: true,
-      },
-    },
-  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
