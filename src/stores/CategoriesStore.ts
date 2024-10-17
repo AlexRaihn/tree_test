@@ -15,7 +15,6 @@ export const CategoriesStore = defineStore('CategoriesStore', {
           },
         })
         .then(response => {
-          console.log(response.data.length)
           this.translateTreeOnList(response.data)
         })
     },

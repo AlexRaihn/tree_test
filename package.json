@@ -3,13 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://AlexRaihn.github.io/tree_test/",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --fix",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d dist",
     "format": "prettier --write src/"
   },
   "dependencies": {
@@ -28,6 +31,7 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9.12.0",
     "eslint-plugin-vue": "^9.29.0",
+    "gh-pages": "^6.2.0",
     "npm-run-all2": "^6.2.3",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
